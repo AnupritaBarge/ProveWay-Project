@@ -1,0 +1,203 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css"/>
+    </head>
+    
+    <body>
+        <div class="main">
+            <div class="bogo">
+                <div class="bogoline"></div>
+                <p style="color: #FF6B82; font-size: larger; font-weight: bold; margin-bottom: 1px;">YAY! It's BOGO</p>
+                <div class="bogoline"></div>
+            </div>
+
+            <div class="unit" id="box1"> 
+                
+                <div class="box">
+                    <input type="radio" value="option-value" style="margin:10px">
+                    <p>1 Unit</p>
+
+                    <div class="off">
+                        10% Off
+                    </div>
+
+                    <div class="price">
+                        <p>$10.00 USD</p>
+                        <p class="line">$24.00 USD</p>
+                    </div> 
+                </div>
+                 
+
+                <div class="dropdown">
+                    <div class="header">
+                        <p style="margin-left: 40px; margin-right: auto;">Size</p>
+                        <p style="margin-left: 0px; margin-right: 40px;">Color</p>
+                    </div>
+                    <div class="header">
+                        <p>#1</p>
+                        <select>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+    
+                        <select>
+                            <option>Black</option>
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                    </div>
+                    <div class="header">
+                        <p>#2</p>
+                        <select>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+    
+                        <select>
+                            <option>Black</option>
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit" id="box2">
+                <div class="mostpopular">
+                    <P>Most Popular</P>
+                </div>
+                <div class="box" >                    
+                    <input type="radio" value="option-value" style="margin:10px">
+                    <p>2 Units</p>
+                    <div class="off">
+                        20% Off
+                    </div>
+
+                    <div class="price">
+                        <p>$18.00 USD</p>
+                        <p class="line">$24.00 USD</p>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <div class="header">
+                        <p style="margin-left: 40px; margin-right: auto;">Size</p>
+                        <p style="margin-left: 0px; margin-right: 40px;">Color</p>
+                    </div>
+                    <div class="header">
+                        <p>#1</p>
+                        <select>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+    
+                        <select>
+                            <option>Black</option>
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                    </div>
+                    <div class="header">
+                        <p>#2</p>
+                        <select>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+    
+                        <select>
+                            <option>Black</option>
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit" id="box3">
+                <div class="box">
+                    <input type="radio" value="option-value" style="margin:10px">
+                    <p>3 Units</p>
+                    <div class="off">
+                        30% Off
+                    </div>
+
+                    <div class="price">
+                        <p>$24.00 USD</p>
+                        <p class="line">$24.00 USD</p>
+                    </div>
+                </div>
+                
+
+                <div class="dropdown">
+                    <div class="header">
+                        <p style="margin-left: 40px; margin-right: auto;">Size</p>
+                        <p style="margin-left: 0px; margin-right: 40px;">Color</p>
+                    </div>
+                    <div class="header">
+                        <p>#1</p>
+                        <select>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+    
+                        <select>
+                            <option>Black</option>
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                    </div>
+                    <div class="header">
+                        <p>#2</p>
+                        <select>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+    
+                        <select>
+                            <option>Black</option>
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="total">
+                <p style="color: #FF6B82; margin-right: auto; margin-left: 0px;">Free Delivery</p>
+                <p style="color: black; margin-left:auto; margin-right: 0px;">Total : $18.00 USD</p>
+            </div>         
+            
+            <button>+ Add to Cart</button>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const boxes = document.querySelectorAll('.unit');
+                const radiobutton = document.querySelectorAll('input[type = "radio"]');
+                const units = document.querySelectorAll('.box');
+
+                units.forEach((header, index) => {
+                    header.addEventListener('click', (e) => {
+                        const selectedbox = e.target.closest('.unit');
+
+                        boxes.forEach((box, boxIndex) => {
+                            if(box !== selectedbox){
+                                box.classList.remove('active');
+                                radiobutton[boxIndex].checked = false;
+                            }
+                        });
+
+                        selectedbox.classList.toggle('active');
+                        radiobutton[index].checked = true;
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
